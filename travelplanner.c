@@ -40,7 +40,7 @@ Node make_network (char *network){
   Node busstop = malloc(sizeof(struct node));
   
 }
-
+ASASAS
 
 int main(){
   FILE *start = fopen("~/IOOPM/start.txt","r");
