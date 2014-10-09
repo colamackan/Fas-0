@@ -2,13 +2,23 @@
 #include <stdlib.h>
 
 
+/* Startnod sätts till 0, nästa nod får värdet föregående nod + edge */
+
+
+
+
+
 typedef struct node{
   char *name;
-  char *line;
-  int *traveltime;
+  int  *line;
+  int current_time;
+  char *edge;
   struct node *next;
 }*Node;
 
+
+Node clear_tree(){
+}
 
 void find_matching_route(){
 }
@@ -16,7 +26,7 @@ void find_matching_route(){
 void possible_routes(){
 }
 
-void update_network(){
+Node update_network(){
 }
 
 void delete_route(){
@@ -36,13 +46,13 @@ void readline(FILE *busnetwork){
 }
 
 Node make_network (char *network){
-  FILE *busnetwork = fopen("~/IOOPM/natverk.txt","r");
+  FILE *busnetwork = fopen(network,"r");
   Node busstop = malloc(sizeof(struct node));
   
 }
-ASASAS
 
-int main(){
-  FILE *start = fopen("~/IOOPM/start.txt","r");
+
+int main(int argc, char *argv[]){
+
   return 0;
 }
