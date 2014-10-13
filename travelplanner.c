@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 /* Startnod sätts till 0, nästa nod får värdet föregående nod + edge */
 
-
-
-
+typedef struct route{
+  int  *line;
+  int *traveltime;
+}*Route;
 
 typedef struct node{
   char *name;
-  int  *line;
-  int current_time;
-  char *edge;
-  struct node *next;
+  char *next;
+  char *prev;
 }*Node;
 
-
+/*
 Node clear_tree(){
 }
 
@@ -40,19 +39,32 @@ Node delete_busstop(){
 
 Node insert_busstop(){
 }
+*/
 
-void readline(FILE *busnetwork){
 
-}
 
 Node make_network (char *network){
+  char *list = NULL;
   FILE *busnetwork = fopen(network,"r");
-  Node busstop = malloc(sizeof(struct node));
+  Node *busstop = malloc(sizeof(struct node));
+  char *first_line = fgets(list, 128, busnetwork);
+  int len = strlen(first_line);
+
+  for(int i = 0; i <= len; i++){
+    if (isalpha(busstop[i])) continue;
+    printf(stop)
+
+  fclose(busnetwork);
+  return 0;
+  
+  
   
 }
 
 
-int main(int argc, char *argv[]){
 
+int main(int argc, char *argv[]){
+  make_network(argv[1]);
   return 0;
 }
+ 
