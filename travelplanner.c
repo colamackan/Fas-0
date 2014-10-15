@@ -13,6 +13,7 @@ typedef struct node{
   char *name;
   char *next;
   char *prev;
+  struct node *next_stop;
 }*Node;
 
 /*
@@ -41,31 +42,39 @@ Node insert_busstop(){
 }
 */
 
+int readline(char *dest, int n, FILE *source){
+  fgets(dest, n, source);
+  int len = strlen(dest);
+  if(dest[len-1] == '\n')
+    dest[len-1] = '\0';
+  return len;
+}
 
 
 Node make_network (char *network){
   char *list = NULL;
   FILE *busnetwork = fopen(network,"r");
-  Node *busstop = malloc(sizeof(struct node));
-  char *first_line = fgets(list, 128, busnetwork);
-  int len = strlen(first_line);
-
-  for(int i = 0; i <= len; i++){
-    if (isalpha(busstop[i])) continue;
-    list = isalpha(busstop[i]);
-    for (int j = 0; j<= list; j++) 
-      if (*name != list){
-	busstop->name = malloc(strlen(list+1));
-	strcpy(busstop->name, list);
-	else if (*name = list){
-	  busstop->next = malloc(strlen(list+1));
-	  strcpy(busstop->next, list);
-	  return busstop};
+  Node busstop = malloc(sizeof(struct node));
+  readline(list, 128, busnetwork);
+  for(int i = 0; i != '\0'; i++){
+    if (isalpha(&busstop[i])){;
+      list = (isalpha(&busstop[i]));
+      while (list != NULL){
+	if (strcmp(list, busstop->name) == 0){
+	  busstop->next = malloc(strlen(list)+1);
+	  strcpy(busstop->next, list);}
+	else{
+	  busstop->name = malloc(strlen(list)+1);
+	  strcpy(busstop->name, list);}
       }
-      else printf("No station available");
+    }
+    else{
+      readline(list, 128, busnetwork);
+    }
   }
+  printf("Name: %s\n",busstop->name);
+  return busstop;
 }
-
 
 int main(int argc, char *argv[]){
   make_network(argv[1]);
