@@ -26,7 +26,7 @@ void menu(int choice){
   puts("What do you want to do?");
   puts("1. See possible routes from entered start and stop");
   puts("2. Go from start to stop at entered time");
-  puts("3. Go from start to stop at lates entered time");
+  puts("3. Go from start to stop at latest entered time");
   puts("4. Configure the bus network");
   puts("0. Exit Travel Planner");
   printf("\n Choice: ");
