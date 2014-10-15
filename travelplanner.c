@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
 /* Startnod sätts till 0, nästa nod får värdet föregående nod + edge */
 
 typedef struct route{
@@ -52,15 +52,19 @@ Node make_network (char *network){
 
   for(int i = 0; i <= len; i++){
     if (isalpha(busstop[i])) continue;
-    printf(stop)
-
-  fclose(busnetwork);
-  return 0;
-  
-  
-  
+    list = isalpha(busstop[i]);
+    for (int j = 0; j<= list; j++) 
+      if (*name != list){
+	busstop->name = malloc(strlen(list+1));
+	strcpy(busstop->name, list);
+	else if (*name = list){
+	  busstop->next = malloc(strlen(list+1));
+	  strcpy(busstop->next, list);
+	  return busstop};
+      }
+      else printf("No station available");
+  }
 }
-
 
 
 int main(int argc, char *argv[]){
