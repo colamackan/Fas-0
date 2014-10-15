@@ -1,14 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+/* Startnod sätts till 0, nästa nod får värdet föregående nod + edge */
+
+typedef struct route{
+  int  *line;
+  int *traveltime;
+}*Route;
 
 typedef struct node{
   char *name;
-  char *line;
-  int *traveltime;
-  struct node *next;
+  char *next;
+  char *prev;
 }*Node;
 
+/*
+Node clear_tree(){
+}
 
 void find_matching_route(){
 }
@@ -16,7 +25,7 @@ void find_matching_route(){
 void possible_routes(){
 }
 
-void update_network(){
+Node update_network(){
 }
 
 void delete_route(){
@@ -30,19 +39,32 @@ Node delete_busstop(){
 
 Node insert_busstop(){
 }
+*/
 
-void readline(FILE *busnetwork){
 
-}
 
 Node make_network (char *network){
-  FILE *busnetwork = fopen("~/IOOPM/natverk.txt","r");
-  Node busstop = malloc(sizeof(struct node));
+  char *list = NULL;
+  FILE *busnetwork = fopen(network,"r");
+  Node *busstop = malloc(sizeof(struct node));
+  char *first_line = fgets(list, 128, busnetwork);
+  int len = strlen(first_line);
+
+  for(int i = 0; i <= len; i++){
+    if (isalpha(busstop[i])) continue;
+    printf(stop)
+
+  fclose(busnetwork);
+  return 0;
+  
+  
   
 }
-ASASAS
 
-int main(){
-  FILE *start = fopen("~/IOOPM/start.txt","r");
+
+
+int main(int argc, char *argv[]){
+  make_network(argv[1]);
   return 0;
 }
+ 
